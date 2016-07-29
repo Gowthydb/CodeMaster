@@ -1,0 +1,24 @@
+package collections;
+
+public class StringToSecondHighest {
+
+	public static void main(String[] args) {
+		topTwoElem();
+	}
+	
+	static void topTwoElem(){		
+		String str = "5 66 43 88 39";		
+		String []num = str.split(" ");		
+		int fMax=0,sMax=0;				
+		for(String nr : num){
+			int n = Integer.parseInt(nr);
+			if(fMax<n){
+				sMax=fMax;
+				fMax=n;
+			}else if(sMax<n){
+				sMax=n;
+			}
+		}		
+		System.out.println("second high =="+sMax);
+	}	
+}
